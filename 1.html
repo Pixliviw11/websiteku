@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halaman dengan Pop-up</title>
+  <style>
+    #popupAd {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 300px;
+      height: 250px;
+      background: #fff;
+      border: 2px solid #ccc;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: none;
+    }
+    #popupAd iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    #closeAd {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-bottom-left-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Selamat datang!</h1>
+<p>Ini adalah halaman HTML dengan pop-up iklan custom.</p>
+
+<!-- Pop-up -->
+<div id="popupAd">
+  <div id="closeAd" onclick="closePopup()">X</div>
+  <iframe src="https://s.shopee.co.id/1LSe5TuMDK" title="iklan"></iframe>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById("popupAd").style.display = "block";
+  }
+  function closePopup() {
+    document.getElementById("popupAd").style.display = "none";
+  }
+  window.onload = function () {
+    setTimeout(showPopup, 3000);
+  };
+</script>
+
+</body>
+</html>
